@@ -1,6 +1,6 @@
 function setup()
 { 
-createCanvas(displayWidth,displayHeight)
+  createCanvas(displayWidth,displayHeight)
   background(0)
   angleMode(DEGREES)
   noLoop()
@@ -90,20 +90,20 @@ function draw()
     translate(width/2,height*0.58)
     baseCir(r)
     if(s1.value()=="linear")g=0
-    else if(s1.value=="simple harmonic")g=1
+    else if(s1.value()=="simple harmonic")g=1
     else g=2
     outStroke(aS,g)
     dwell(aD)
     if(s3.value()=="linear")g=0
-    else if(s3.value=="simple harmonic")g=1
+    else if(s3.value()=="simple harmonic")g=1
     else g=2
     rtnStroke(aR,g)
   }
   function clean()
   {
-    clear()
-    setup()
-    draw()
+    clear();
+    setup();
+    draw();
   }
   
   }
@@ -113,10 +113,10 @@ function draw()
   if(g==0){
   for(let i=0;i<R+1;i++)
   {
-    let ang=map(i,0,R,0,-A)
-    let H=map(i,0,R,u,h-u)
+    let ang=map(i,0,R,0,-A);
+    let H=map(i,0,R,u,h-u);
     let x=cos(ang)*(r/2+H);
-    let y=sin(ang)*(r/2+H)
+    let y=sin(ang)*(r/2+H);
     xPos.push(x);
     yPos.push(y);
   }
@@ -124,10 +124,10 @@ function draw()
   if(g==1){
   for(let i=0;i<R+1;i++)
   {
-    let ang=map(i,0,R,0,-A)
-    let H=map(i,0,R,u,90-u)
+    let ang=map(i,0,R,0,-A);
+    let H=map(i,0,R,u,90-u);
     let x=cos(ang)*(r/2+h*sin(H));
-    let y=sin(ang)*(r/2+h*sin(H))
+    let y=sin(ang)*(r/2+h*sin(H));
     xPos.push(x);
     yPos.push(y);
   }
@@ -135,19 +135,19 @@ function draw()
   if(g==2){
   for(let i=0;i<R+1;i++)
   {
-    let ang=map(i,0,R,0,-A)
-    let H=map(i,0,R,u,R-u)
+    let ang=map(i,0,R,0,-A);
+    let H=map(i,0,R,u,R-u);
     if(H<(R/2)){
-      let o=2*h*pow((H/R),2)
+      let o=2*h*pow((H/R),2);
       let x=cos(ang)*(r/2+o);
-      let y=sin(ang)*(r/2+o)
+      let y=sin(ang)*(r/2+o);
       xPos.push(x);
       yPos.push(y);
     }
     else if(H>=(R/2)){
-      let o=h-2*h*pow(((H-R)/R),2)
+      let o=h-2*h*pow(((H-R)/R),2);
       let x=cos(ang)*(r/2+o);
-      let y=sin(ang)*(r/2+o)
+      let y=sin(ang)*(r/2+o);
       xPos.push(x);
       yPos.push(y);
     }
@@ -157,57 +157,57 @@ function draw()
   
   function baseCir(r)
   {
-    stroke(255)
-    noFill()
-    drawingContext.setLineDash([3,3])
-    ellipse(0,0,r)
+    stroke(255);
+    noFill();
+    drawingContext.setLineDash([3,3]);
+    ellipse(0,0,r);
   }
     
   function outStroke(aS,g)
   {
-    rotate(-90)
-    stroke(255)
-    shm(aS,0,g,r)
-    drawingContext.setLineDash([])
+    rotate(-90);
+    stroke(255);
+    shm(aS,0,g,r);
+    drawingContext.setLineDash([]);
     for(let i=0;i<R;i++)
     {
-      let x=xPos[i]
-      let y=yPos[i]
-      let px=xPos[i+1]
-      let py=yPos[i+1]
-      line(x,y,px,py)
+      let x=xPos[i];
+      let y=yPos[i];
+      let px=xPos[i+1];
+      let py=yPos[i+1];
+      line(x,y,px,py);
     }
     
-    line(0,0,50,0)
-    rotate(-aS)
-    line(0,0,50,0)
+    line(0,0,50,0);
+    rotate(-aS);
+    line(0,0,50,0);
   }
   
   function dwell(aD)
   {
-    arc(0,0,r+2*h,r+2*h,-aD,0)
-    rotate(-aD)
-    line(0,0,50,0)
+    arc(0,0,r+2*h,r+2*h,-aD,0);
+    rotate(-aD);
+    line(0,0,50,0);
   }
   
   function rtnStroke(aR,g)
   {
-    xPos=[]
-    yPos=[]
-    var w
+    xPos=[];
+    yPos=[];
+    var w;
     if(g==0) w=h;
     else if(g==1) w=90;
-    else if(g==2) w=R
-    shm(aR,w,g,r)
+    else if(g==2) w=R;
+    shm(aR,w,g,r);
     for(let i=0;i<R;i++)
     {
-      let x=xPos[i]
-      let y=yPos[i]
-      let px=xPos[i+1]
-      let py=yPos[i+1]
-      line(x,y,px,py)
+      let x=xPos[i];
+      let y=yPos[i];
+      let px=xPos[i+1];
+      let py=yPos[i+1];
+      line(x,y,px,py);
     }
-    rotate(-aR)
-    line(0,0,50,0)
+    rotate(-aR);
+    line(0,0,50,0);
   }
 }
