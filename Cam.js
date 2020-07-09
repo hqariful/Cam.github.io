@@ -25,7 +25,7 @@ function draw()
   fill(255);
   textAlign(CENTER,CENTER);
   text(t,width/2,height*0.05);
-  let K="Designed by: Ariful Hoque,ME,CUET.";
+  let K="Designed by: Ariful Hoque, ME, CUET.";
   textSize(width*0.04);
   text(K,width/2,height*0.1);
   
