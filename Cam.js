@@ -83,6 +83,10 @@ function draw()
   text(txt5,width*0.47,height*0.25);
   text(txt6,width*0.47,height*0.3);
   text(txt7,0,height*0.35)
+
+  let nb="Please clear the canvas before entering new data.\n Works best on mobile devices"
+  textAlign(CENTER)
+  text(nb,width*0.5,height*0.95)
   
   function start()
   {
