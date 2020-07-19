@@ -1,6 +1,6 @@
 function setup()
 { 
-  createCanvas(displayWidth,displayHeight);
+  createCanvas(displayWidth,displayWidth*1.778);
   background(0);
   angleMode(DEGREES);
   noLoop();
@@ -9,10 +9,8 @@ function setup()
 
 function draw()
 {
-  var R=60;//resolution
-  //var q=40*2;//offset diameter
+  var R=60;//resolution;
   
-  //var g=0;
   let xPos=[];
   let yPos=[];
 
@@ -50,7 +48,7 @@ function draw()
   s3.option("uniform acceleration");
   let submit=createButton("submit");
   let cL=createButton("clear");
-   submit.position(width*0.85,height*0.4);
+  submit.position(width*0.85,height*0.4);
   submit.mousePressed(start);
   cL.position(width*0.1,height*0.4);
   cL.mousePressed(clean);
@@ -82,11 +80,11 @@ function draw()
   text(txt5,width*0.47,height*0.15);
   text(txt5,width*0.47,height*0.25);
   text(txt6,width*0.47,height*0.3);
-  text(txt7,0,height*0.35)
+  text(txt7,0,height*0.35);
 
   let nb="Please clear the canvas before entering new data.\n Works best on mobile devices"
-  textAlign(CENTER)
-  text(nb,width*0.5,height*0.95)
+  textAlign(CENTER);
+  text(nb,width*0.5,height*0.95);
   
   function start()
   {
@@ -219,15 +217,15 @@ function draw()
     var j=asin(q/r)//offset angle
     rotate(-90+j);
     drawingContext.setLineDash([]);
-    line(0,0,200,0)
-    rotate(-aS)
+    line(0,0,200,0);
+    rotate(-aS);
     line(0,0,200,0);
     rotate(-aD);
     line(0,0,200,0);
     rotate(-aR);
-    line(0,0,200,0)
-    rotate(aD+aS+aR)
-    arc(0,0,r,r,0,-aS-aD-aR)
+    line(0,0,200,0);
+    rotate(aD+aS+aR);
+    arc(0,0,r,r,0,-aS-aD-aR);
   }
     
   function outStroke(aS,g,r,h,q)
