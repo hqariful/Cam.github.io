@@ -1,6 +1,6 @@
 function setup()
 { 
-  createCanvas(displayWidth,displayWidth*1.778);
+  createCanvas(displayWidth*0.56,displayWidth);
   background(0);
   angleMode(DEGREES);
   noLoop();
