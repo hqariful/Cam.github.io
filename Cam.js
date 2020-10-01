@@ -84,6 +84,7 @@ function draw() {
     text(nb, width * 0.5, height * 0.95);
 
     function start() {
+      submit.remove();
       var aS = inp1.value();
       var aD = inp2.value();
       var aR = inp3.value();
