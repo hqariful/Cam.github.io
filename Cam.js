@@ -85,21 +85,13 @@ function draw() {
 
     function start() {
       submit.remove();
-      var aS = inp1.value();
-      var aD = inp2.value();
-      var aR = inp3.value();
-      var r = rad.value();
-      var h = disp.value();
-      var q = off.value();
-      q = Number(q);
-      r = Number(r);
-      h = Number(h);
-      aS = Number(aS);
-      aD = Number(aD);
-      aR = Number(aR);
-      q = 4 * q;
-      r = 4 * r;
-      h = 2 * h;
+      var aS = Number(inp1.value());
+      var aD = Number(inp2.value());
+      var aR = Number(inp3.value());
+      var r = 4 * Number(rad.value());
+      var h = 2 * Number(disp.value());
+      var q = 4 * Number(off.value());
+
       var g; //type of motion 0:line 1:shm 2:uniform
       translate(width * 0.6, height * 0.67);
       baseCir(r, q, aS, aD, aR);
